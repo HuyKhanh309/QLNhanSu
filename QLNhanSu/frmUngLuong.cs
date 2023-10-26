@@ -16,7 +16,6 @@ namespace QLNhanSu
         public frmUngLuong()
         {
             InitializeComponent();
-            //sdfbahbfahs
         }
     }
 }
