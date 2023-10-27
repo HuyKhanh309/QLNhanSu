@@ -19,28 +19,28 @@ namespace QLNhanSu.Models
         public string MaPhongBan {  get; set; }
 
         [ForeignKey("MaPhongBan")]
-        public PhongBan PhongBan { get; set; }
+        public virtual PhongBan PhongBan { get; set; }
 
         [Required]
         [StringLength(10)]  
         public string MaNhanVien {  get; set; }
 
         [ForeignKey("MaNhanVien")]
-        public NhanVien NhanVien { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
 
         [Required]
         [StringLength(10)]
         public string MaChucVu {  get; set; }
 
         [ForeignKey("MaChucVu")]
-        public ChucVu ChucVu { get; set; }
+        public virtual ChucVu ChucVu { get; set; }
 
         [Required]
         [StringLength(10)]
         public string MaQuyetDinh {  get; set; }
 
         [ForeignKey("MaQuyetDinh")]
-        public QuyetDinh QuyetDinh { get; set; }
+        public virtual QuyetDinh QuyetDinh { get; set; }
         
 
 
@@ -48,7 +48,7 @@ namespace QLNhanSu.Models
         public int IDHD {  get; set; }
 
         [ForeignKey("IDHD")]
-        public LoaiHD LoaiHD { get; set; }
+        public virtual LoaiHD LoaiHD { get; set; }
        
 
         [StringLength(10)]
@@ -56,7 +56,7 @@ namespace QLNhanSu.Models
         public string MaCheDo {  get; set; }
 
         [ForeignKey("MaCheDo")]
-        public CheDoLamViec CheDoLamViec { get; set; }
+        public virtual CheDoLamViec CheDoLamViec { get; set; }
 
         public float NgayKy { get; set; }
 

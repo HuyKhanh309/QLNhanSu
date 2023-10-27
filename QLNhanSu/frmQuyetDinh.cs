@@ -59,9 +59,10 @@ namespace QLNhanSu
             dgv.DataSource = null;
             dgv.DataSource = GetData();
 
-            var index = dgv.CurrentCell.RowIndex;
+           
             if (dgv.CurrentCell != null)
             {
+                var index = dgv.CurrentCell.RowIndex;
                 if (index >= 0)
                 {
                     var dongChon = dgv.Rows[index];

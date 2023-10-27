@@ -52,9 +52,7 @@ namespace QLNhanSu
             this.bar8 = new DevExpress.XtraBars.Bar();
             this.bar9 = new DevExpress.XtraBars.Bar();
             this.bar11 = new DevExpress.XtraBars.Bar();
-            this.lbTimTenQuyetDinh = new DevExpress.XtraEditors.LabelControl();
             this.gbThongTin = new DevExpress.XtraEditors.GroupControl();
-            this.tbTenQuyetDinh = new DevExpress.XtraEditors.TextEdit();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar13 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -95,7 +93,6 @@ namespace QLNhanSu
             this.bar23 = new DevExpress.XtraBars.Bar();
             this.bar24 = new DevExpress.XtraBars.Bar();
             ((System.ComponentModel.ISupportInitialize)(this.gbThongTin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTenQuyetDinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtThoiGian.Properties)).BeginInit();
@@ -303,28 +300,12 @@ namespace QLNhanSu
             this.bar11.OptionsBar.UseWholeRow = true;
             this.bar11.Text = "Main menu";
             // 
-            // lbTimTenQuyetDinh
-            // 
-            this.lbTimTenQuyetDinh.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimTenQuyetDinh.Appearance.Options.UseFont = true;
-            this.lbTimTenQuyetDinh.Location = new System.Drawing.Point(310, 87);
-            this.lbTimTenQuyetDinh.Name = "lbTimTenQuyetDinh";
-            this.lbTimTenQuyetDinh.Size = new System.Drawing.Size(111, 21);
-            this.lbTimTenQuyetDinh.TabIndex = 15;
-            // 
             // gbThongTin
             // 
             this.gbThongTin.Location = new System.Drawing.Point(0, 0);
             this.gbThongTin.Name = "gbThongTin";
             this.gbThongTin.Size = new System.Drawing.Size(200, 126);
             this.gbThongTin.TabIndex = 0;
-            // 
-            // tbTenQuyetDinh
-            // 
-            this.tbTenQuyetDinh.Location = new System.Drawing.Point(191, 130);
-            this.tbTenQuyetDinh.Name = "tbTenQuyetDinh";
-            this.tbTenQuyetDinh.Size = new System.Drawing.Size(210, 22);
-            this.tbTenQuyetDinh.TabIndex = 3;
             // 
             // barDockControlRight
             // 
@@ -753,7 +734,6 @@ namespace QLNhanSu
             this.Text = "frmKyLuong";
             this.Load += new System.EventHandler(this.frmKyLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbThongTin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTenQuyetDinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -798,9 +778,7 @@ namespace QLNhanSu
         private DevExpress.XtraBars.Bar bar8;
         private DevExpress.XtraBars.Bar bar9;
         private DevExpress.XtraBars.Bar bar11;
-        private DevExpress.XtraEditors.LabelControl lbTimTenQuyetDinh;
         private DevExpress.XtraEditors.GroupControl gbThongTin;
-        private DevExpress.XtraEditors.TextEdit tbTenQuyetDinh;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.Bar bar13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;

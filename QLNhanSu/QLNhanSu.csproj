@@ -138,6 +138,7 @@
     <Compile Include="Models\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\HopDongView.cs" />
     <Compile Include="View\UngLuongView.cs" />
     <Compile Include="View\QuyetDinhView.cs" />
     <EmbeddedResource Include="frmHopDong.resx">
@@ -182,6 +183,7 @@
     <None Include="Properties\DataSources\QLNhanSu.Models.LoaiHD.datasource" />
     <None Include="Properties\DataSources\QLNhanSu.Models.PhuCap.datasource" />
     <None Include="Properties\DataSources\QLNhanSu.Models.QuyetDinh.datasource" />
+    <None Include="Properties\DataSources\QLNhanSu.View.HopDongView.datasource" />
     <None Include="Properties\DataSources\QLNhanSu.View.UngLuongView.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
