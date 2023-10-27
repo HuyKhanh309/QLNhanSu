@@ -52,15 +52,14 @@ namespace QLNhanSu
             this.bar8 = new DevExpress.XtraBars.Bar();
             this.bar9 = new DevExpress.XtraBars.Bar();
             this.bar11 = new DevExpress.XtraBars.Bar();
-            this.lbTimTenQuyetDinh = new DevExpress.XtraEditors.LabelControl();
             this.gbThongTin = new DevExpress.XtraEditors.GroupControl();
-            this.tbTenQuyetDinh = new DevExpress.XtraEditors.TextEdit();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.lbTimIDNhanVien = new DevExpress.XtraEditors.LabelControl();
+            this.lbTimTenNhanVien = new DevExpress.XtraEditors.LabelControl();
             this.bar13 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dtNgayUng = new DevExpress.XtraEditors.DateEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar12 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -75,15 +74,15 @@ namespace QLNhanSu
             this.lbLuongUng = new DevExpress.XtraEditors.LabelControl();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.tbIDNhanVien = new DevExpress.XtraEditors.TextEdit();
+            this.tbTenNhanVien = new DevExpress.XtraEditors.TextEdit();
             this.lbIDPhieuUng = new DevExpress.XtraEditors.LabelControl();
-            this.lbIDNhanVien = new DevExpress.XtraEditors.LabelControl();
+            this.lbTenNhanVien = new DevExpress.XtraEditors.LabelControl();
             this.tbIDPhieuUng = new DevExpress.XtraEditors.TextEdit();
             this.lbTimIDPhieuuong = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.scTimIDLoaiCong = new DevExpress.XtraEditors.SearchControl();
-            this.scTimTenLoaiCong = new DevExpress.XtraEditors.SearchControl();
+            this.scTimIDPhieuUng = new DevExpress.XtraEditors.SearchControl();
+            this.scTimTenNhanVien = new DevExpress.XtraEditors.SearchControl();
             this.bar14 = new DevExpress.XtraBars.Bar();
             this.bar15 = new DevExpress.XtraBars.Bar();
             this.bar16 = new DevExpress.XtraBars.Bar();
@@ -95,14 +94,20 @@ namespace QLNhanSu
             this.bar22 = new DevExpress.XtraBars.Bar();
             this.bar23 = new DevExpress.XtraBars.Bar();
             this.bar24 = new DevExpress.XtraBars.Bar();
-            this.dtNgayUng = new DevExpress.XtraEditors.DateEdit();
+            this.ungLuongViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ungLuongViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.maPhieuUngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mucUngLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayUngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gbThongTin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTenQuyetDinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLuongUng.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbIDNhanVien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbTenNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIDPhieuUng.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -111,10 +116,10 @@ namespace QLNhanSu
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scTimIDLoaiCong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scTimTenLoaiCong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scTimIDPhieuUng.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scTimTenNhanVien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // barDockControl5
@@ -307,29 +312,12 @@ namespace QLNhanSu
             this.bar11.OptionsBar.UseWholeRow = true;
             this.bar11.Text = "Main menu";
             // 
-            // lbTimTenQuyetDinh
-            // 
-            this.lbTimTenQuyetDinh.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimTenQuyetDinh.Appearance.Options.UseFont = true;
-            this.lbTimTenQuyetDinh.Location = new System.Drawing.Point(310, 87);
-            this.lbTimTenQuyetDinh.Name = "lbTimTenQuyetDinh";
-            this.lbTimTenQuyetDinh.Size = new System.Drawing.Size(111, 21);
-            this.lbTimTenQuyetDinh.TabIndex = 15;
-            this.lbTimTenQuyetDinh.Text = "Tên quyết định";
-            // 
             // gbThongTin
             // 
             this.gbThongTin.Location = new System.Drawing.Point(0, 0);
             this.gbThongTin.Name = "gbThongTin";
             this.gbThongTin.Size = new System.Drawing.Size(200, 126);
             this.gbThongTin.TabIndex = 0;
-            // 
-            // tbTenQuyetDinh
-            // 
-            this.tbTenQuyetDinh.Location = new System.Drawing.Point(191, 130);
-            this.tbTenQuyetDinh.Name = "tbTenQuyetDinh";
-            this.tbTenQuyetDinh.Size = new System.Drawing.Size(210, 22);
-            this.tbTenQuyetDinh.TabIndex = 3;
             // 
             // barDockControlRight
             // 
@@ -339,15 +327,15 @@ namespace QLNhanSu
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 658);
             // 
-            // lbTimIDNhanVien
+            // lbTimTenNhanVien
             // 
-            this.lbTimIDNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimIDNhanVien.Appearance.Options.UseFont = true;
-            this.lbTimIDNhanVien.Location = new System.Drawing.Point(397, 46);
-            this.lbTimIDNhanVien.Name = "lbTimIDNhanVien";
-            this.lbTimIDNhanVien.Size = new System.Drawing.Size(98, 21);
-            this.lbTimIDNhanVien.TabIndex = 15;
-            this.lbTimIDNhanVien.Text = "Mã nhân viên";
+            this.lbTimTenNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimTenNhanVien.Appearance.Options.UseFont = true;
+            this.lbTimTenNhanVien.Location = new System.Drawing.Point(397, 46);
+            this.lbTimTenNhanVien.Name = "lbTimTenNhanVien";
+            this.lbTimTenNhanVien.Size = new System.Drawing.Size(104, 21);
+            this.lbTimTenNhanVien.TabIndex = 15;
+            this.lbTimTenNhanVien.Text = "Tên nhân viên";
             // 
             // bar13
             // 
@@ -376,6 +364,7 @@ namespace QLNhanSu
             this.btnThoat.Id = 5;
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // groupControl1
             // 
@@ -385,9 +374,9 @@ namespace QLNhanSu
             this.groupControl1.Controls.Add(this.lbLuongUng);
             this.groupControl1.Controls.Add(this.btnHuy);
             this.groupControl1.Controls.Add(this.btnLuu);
-            this.groupControl1.Controls.Add(this.tbIDNhanVien);
+            this.groupControl1.Controls.Add(this.tbTenNhanVien);
             this.groupControl1.Controls.Add(this.lbIDPhieuUng);
-            this.groupControl1.Controls.Add(this.lbIDNhanVien);
+            this.groupControl1.Controls.Add(this.lbTenNhanVien);
             this.groupControl1.Controls.Add(this.tbIDPhieuUng);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
@@ -395,6 +384,24 @@ namespace QLNhanSu
             this.groupControl1.Size = new System.Drawing.Size(487, 573);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin ứng lương";
+            // 
+            // dtNgayUng
+            // 
+            this.dtNgayUng.EditValue = null;
+            this.dtNgayUng.Location = new System.Drawing.Point(191, 270);
+            this.dtNgayUng.MenuManager = this.barManager1;
+            this.dtNgayUng.Name = "dtNgayUng";
+            this.dtNgayUng.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtNgayUng.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtNgayUng.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dtNgayUng.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtNgayUng.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dtNgayUng.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtNgayUng.Properties.MaskSettings.Set("mask", "dd/MM/yyyy");
+            this.dtNgayUng.Size = new System.Drawing.Size(210, 22);
+            this.dtNgayUng.TabIndex = 10;
             // 
             // barManager1
             // 
@@ -438,6 +445,7 @@ namespace QLNhanSu
             this.btnThem.Id = 0;
             this.btnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThem.ImageOptions.SvgImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnSua
             // 
@@ -446,6 +454,7 @@ namespace QLNhanSu
             this.btnSua.Id = 1;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -454,6 +463,7 @@ namespace QLNhanSu
             this.btnXoa.Id = 2;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -522,6 +532,7 @@ namespace QLNhanSu
             this.btnHuy.Size = new System.Drawing.Size(147, 80);
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -530,14 +541,15 @@ namespace QLNhanSu
             this.btnLuu.Size = new System.Drawing.Size(147, 80);
             this.btnLuu.TabIndex = 4;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // tbIDNhanVien
+            // tbTenNhanVien
             // 
-            this.tbIDNhanVien.Location = new System.Drawing.Point(191, 140);
-            this.tbIDNhanVien.MenuManager = this.barManager1;
-            this.tbIDNhanVien.Name = "tbIDNhanVien";
-            this.tbIDNhanVien.Size = new System.Drawing.Size(210, 22);
-            this.tbIDNhanVien.TabIndex = 3;
+            this.tbTenNhanVien.Location = new System.Drawing.Point(191, 140);
+            this.tbTenNhanVien.MenuManager = this.barManager1;
+            this.tbTenNhanVien.Name = "tbTenNhanVien";
+            this.tbTenNhanVien.Size = new System.Drawing.Size(210, 22);
+            this.tbTenNhanVien.TabIndex = 3;
             // 
             // lbIDPhieuUng
             // 
@@ -549,15 +561,15 @@ namespace QLNhanSu
             this.lbIDPhieuUng.TabIndex = 0;
             this.lbIDPhieuUng.Text = "Mã phiếu ứng";
             // 
-            // lbIDNhanVien
+            // lbTenNhanVien
             // 
-            this.lbIDNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDNhanVien.Appearance.Options.UseFont = true;
-            this.lbIDNhanVien.Location = new System.Drawing.Point(30, 139);
-            this.lbIDNhanVien.Name = "lbIDNhanVien";
-            this.lbIDNhanVien.Size = new System.Drawing.Size(98, 21);
-            this.lbIDNhanVien.TabIndex = 2;
-            this.lbIDNhanVien.Text = "Mã nhân viên";
+            this.lbTenNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenNhanVien.Appearance.Options.UseFont = true;
+            this.lbTenNhanVien.Location = new System.Drawing.Point(30, 139);
+            this.lbTenNhanVien.Name = "lbTenNhanVien";
+            this.lbTenNhanVien.Size = new System.Drawing.Size(104, 21);
+            this.lbTenNhanVien.TabIndex = 2;
+            this.lbTenNhanVien.Text = "Tên nhân viên";
             // 
             // tbIDPhieuUng
             // 
@@ -597,7 +609,15 @@ namespace QLNhanSu
             // 
             // dgv
             // 
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maPhieuUngDataGridViewTextBoxColumn,
+            this.tenNhanVienDataGridViewTextBoxColumn,
+            this.mucUngLuongDataGridViewTextBoxColumn,
+            this.ngayUngDataGridViewTextBoxColumn});
+            this.dgv.DataSource = this.ungLuongViewBindingSource1;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 0);
             this.dgv.Name = "dgv";
@@ -605,32 +625,35 @@ namespace QLNhanSu
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(1112, 573);
             this.dgv.TabIndex = 0;
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 
-            // scTimIDLoaiCong
+            // scTimIDPhieuUng
             // 
-            this.scTimIDLoaiCong.Location = new System.Drawing.Point(141, 43);
-            this.scTimIDLoaiCong.MenuManager = this.barManager1;
-            this.scTimIDLoaiCong.Name = "scTimIDLoaiCong";
-            this.scTimIDLoaiCong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scTimIDLoaiCong.Properties.Appearance.Options.UseFont = true;
-            this.scTimIDLoaiCong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.scTimIDPhieuUng.Location = new System.Drawing.Point(141, 43);
+            this.scTimIDPhieuUng.MenuManager = this.barManager1;
+            this.scTimIDPhieuUng.Name = "scTimIDPhieuUng";
+            this.scTimIDPhieuUng.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scTimIDPhieuUng.Properties.Appearance.Options.UseFont = true;
+            this.scTimIDPhieuUng.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.scTimIDLoaiCong.Size = new System.Drawing.Size(189, 28);
-            this.scTimIDLoaiCong.TabIndex = 11;
+            this.scTimIDPhieuUng.Size = new System.Drawing.Size(189, 28);
+            this.scTimIDPhieuUng.TabIndex = 11;
+            this.scTimIDPhieuUng.TextChanged += new System.EventHandler(this.scTimIDPhieuUng_TextChanged);
             // 
-            // scTimTenLoaiCong
+            // scTimTenNhanVien
             // 
-            this.scTimTenLoaiCong.Location = new System.Drawing.Point(537, 43);
-            this.scTimTenLoaiCong.MenuManager = this.barManager1;
-            this.scTimTenLoaiCong.Name = "scTimTenLoaiCong";
-            this.scTimTenLoaiCong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scTimTenLoaiCong.Properties.Appearance.Options.UseFont = true;
-            this.scTimTenLoaiCong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.scTimTenNhanVien.Location = new System.Drawing.Point(537, 43);
+            this.scTimTenNhanVien.MenuManager = this.barManager1;
+            this.scTimTenNhanVien.Name = "scTimTenNhanVien";
+            this.scTimTenNhanVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scTimTenNhanVien.Properties.Appearance.Options.UseFont = true;
+            this.scTimTenNhanVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.scTimTenLoaiCong.Size = new System.Drawing.Size(203, 28);
-            this.scTimTenLoaiCong.TabIndex = 12;
+            this.scTimTenNhanVien.Size = new System.Drawing.Size(203, 28);
+            this.scTimTenNhanVien.TabIndex = 12;
+            this.scTimTenNhanVien.TextChanged += new System.EventHandler(this.scTimTenNhanVien_TextChanged);
             // 
             // bar14
             // 
@@ -742,29 +765,56 @@ namespace QLNhanSu
             this.bar24.OptionsBar.UseWholeRow = true;
             this.bar24.Text = "Main menu";
             // 
-            // dtNgayUng
+            // ungLuongViewBindingSource
             // 
-            this.dtNgayUng.EditValue = null;
-            this.dtNgayUng.Location = new System.Drawing.Point(191, 273);
-            this.dtNgayUng.MenuManager = this.barManager1;
-            this.dtNgayUng.Name = "dtNgayUng";
-            this.dtNgayUng.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtNgayUng.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtNgayUng.Size = new System.Drawing.Size(210, 22);
-            this.dtNgayUng.TabIndex = 10;
+            this.ungLuongViewBindingSource.DataSource = typeof(QLNhanSu.View.UngLuongView);
+            // 
+            // ungLuongViewBindingSource1
+            // 
+            this.ungLuongViewBindingSource1.DataSource = typeof(QLNhanSu.View.UngLuongView);
+            // 
+            // maPhieuUngDataGridViewTextBoxColumn
+            // 
+            this.maPhieuUngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.maPhieuUngDataGridViewTextBoxColumn.DataPropertyName = "MaPhieuUng";
+            this.maPhieuUngDataGridViewTextBoxColumn.HeaderText = "MaPhieuUng";
+            this.maPhieuUngDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maPhieuUngDataGridViewTextBoxColumn.Name = "maPhieuUngDataGridViewTextBoxColumn";
+            // 
+            // tenNhanVienDataGridViewTextBoxColumn
+            // 
+            this.tenNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "TenNhanVien";
+            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "TenNhanVien";
+            this.tenNhanVienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
+            // 
+            // mucUngLuongDataGridViewTextBoxColumn
+            // 
+            this.mucUngLuongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mucUngLuongDataGridViewTextBoxColumn.DataPropertyName = "MucUngLuong";
+            this.mucUngLuongDataGridViewTextBoxColumn.HeaderText = "MucUngLuong";
+            this.mucUngLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mucUngLuongDataGridViewTextBoxColumn.Name = "mucUngLuongDataGridViewTextBoxColumn";
+            // 
+            // ngayUngDataGridViewTextBoxColumn
+            // 
+            this.ngayUngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngayUngDataGridViewTextBoxColumn.DataPropertyName = "NgayUng";
+            this.ngayUngDataGridViewTextBoxColumn.HeaderText = "NgayUng";
+            this.ngayUngDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayUngDataGridViewTextBoxColumn.Name = "ngayUngDataGridViewTextBoxColumn";
             // 
             // frmUngLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1644, 710);
-            this.Controls.Add(this.lbTimIDNhanVien);
+            this.Controls.Add(this.lbTimTenNhanVien);
             this.Controls.Add(this.lbTimIDPhieuuong);
             this.Controls.Add(this.splitContainerControl1);
-            this.Controls.Add(this.scTimIDLoaiCong);
-            this.Controls.Add(this.scTimTenLoaiCong);
+            this.Controls.Add(this.scTimIDPhieuUng);
+            this.Controls.Add(this.scTimTenNhanVien);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControl1);
@@ -772,14 +822,16 @@ namespace QLNhanSu
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmUngLuong";
             this.Text = "frmUngLuong";
+            this.Load += new System.EventHandler(this.frmUngLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbThongTin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTenQuyetDinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLuongUng.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbIDNhanVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbTenNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIDPhieuUng.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
@@ -788,10 +840,10 @@ namespace QLNhanSu
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scTimIDLoaiCong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scTimTenLoaiCong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNgayUng.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scTimIDPhieuUng.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scTimTenNhanVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,17 +872,15 @@ namespace QLNhanSu
         private DevExpress.XtraBars.Bar bar8;
         private DevExpress.XtraBars.Bar bar9;
         private DevExpress.XtraBars.Bar bar11;
-        private DevExpress.XtraEditors.LabelControl lbTimTenQuyetDinh;
         private DevExpress.XtraEditors.GroupControl gbThongTin;
-        private DevExpress.XtraEditors.TextEdit tbTenQuyetDinh;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.LabelControl lbTimIDNhanVien;
+        private DevExpress.XtraEditors.LabelControl lbTimTenNhanVien;
         private DevExpress.XtraBars.Bar bar13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
-        private DevExpress.XtraEditors.TextEdit tbIDNhanVien;
+        private DevExpress.XtraEditors.TextEdit tbTenNhanVien;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar12;
         private DevExpress.XtraBars.BarButtonItem btnThem;
@@ -843,10 +893,10 @@ namespace QLNhanSu
         private DevExpress.XtraEditors.LabelControl lbTimIDPhieuuong;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private System.Windows.Forms.DataGridView dgv;
-        private DevExpress.XtraEditors.SearchControl scTimIDLoaiCong;
-        private DevExpress.XtraEditors.SearchControl scTimTenLoaiCong;
+        private DevExpress.XtraEditors.SearchControl scTimIDPhieuUng;
+        private DevExpress.XtraEditors.SearchControl scTimTenNhanVien;
         private DevExpress.XtraEditors.LabelControl lbIDPhieuUng;
-        private DevExpress.XtraEditors.LabelControl lbIDNhanVien;
+        private DevExpress.XtraEditors.LabelControl lbTenNhanVien;
         private DevExpress.XtraEditors.TextEdit tbIDPhieuUng;
         private DevExpress.XtraBars.Bar bar14;
         private DevExpress.XtraBars.Bar bar15;
@@ -864,5 +914,11 @@ namespace QLNhanSu
         private DevExpress.XtraEditors.LabelControl lbLuongUng;
         private DevExpress.XtraEditors.LabelControl lbNgayUng;
         private DevExpress.XtraEditors.DateEdit dtNgayUng;
+        private System.Windows.Forms.BindingSource ungLuongViewBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maPhieuUngDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mucUngLuongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayUngDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource ungLuongViewBindingSource1;
     }
 }

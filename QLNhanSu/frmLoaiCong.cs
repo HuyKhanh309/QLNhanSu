@@ -36,7 +36,6 @@ namespace QLNhanSu
         {
             turn_on_off(true);
             QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            List<LoaiCong> list = dbContext.LoaiCongs.ToList();
             LoadDataGridView();
         }
         private List<LoaiCong> GetData()
@@ -50,20 +49,22 @@ namespace QLNhanSu
         {
             dgv.DataSource = null;
             dgv.DataSource = GetData();
-
-            var index = dgv.CurrentCell.RowIndex;
-
-            if (index >= 0)
+            if (dgv.CurrentCell != null)
             {
-                var dongChon = dgv.Rows[index];
-                //Đi vào từng cột
-                string macong = dongChon.Cells[0].Value.ToString();
-                string tencong = dongChon.Cells[1].Value.ToString();
-                string heso = dongChon.Cells[2].Value.ToString();
+                var index = dgv.CurrentCell.RowIndex;
 
-                tbMaLoaiCong.Text= macong;
-                tbTenLoaiCong.Text = tencong;
-                tbHeSoLuong.Text = heso;
+                if (index >= 0)
+                {
+                    var dongChon = dgv.Rows[index];
+                    //Đi vào từng cột
+                    string macong = dongChon.Cells[0].Value.ToString();
+                    string tencong = dongChon.Cells[1].Value.ToString();
+                    string heso = dongChon.Cells[2].Value.ToString();
+
+                    tbMaLoaiCong.Text = macong;
+                    tbTenLoaiCong.Text = tencong;
+                    tbHeSoLuong.Text = heso;
+                }
             }
         }
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -101,18 +102,28 @@ namespace QLNhanSu
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            var del = dbContext.LoaiCongs.Find(tbMaLoaiCong.Text);
-            if (del != null)
+            try
             {
-                dbContext.LoaiCongs.Remove(del);
-                dbContext.SaveChanges();
+                QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
+                var del = dbContext.LoaiCongs.Find(tbMaLoaiCong.Text);
+                if (del != null)
+                {
+                    dbContext.LoaiCongs.Remove(del);
+                    dbContext.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy ca", "Thông báo", MessageBoxButtons.OK);
+                }
+                LoadDataGridView();
+                tbMaLoaiCong.Clear();
+                tbTenLoaiCong.Clear();
+                tbHeSoLuong.Clear();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Không tìm thấy ca", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message.ToString(), "Lỗi: ");
             }
-            LoadDataGridView();
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

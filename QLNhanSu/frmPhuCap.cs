@@ -35,7 +35,6 @@ namespace QLNhanSu
         {
             turn_on_off(true);
             QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            List<PhuCap> list = dbContext.PhuCaps.ToList();
             LoadDataGridView();
         }
 
@@ -51,20 +50,22 @@ namespace QLNhanSu
         {
             dgv.DataSource = null;
             dgv.DataSource = GetData();
-
-            var index = dgv.CurrentCell.RowIndex;
-
-            if (index >= 0)
+            if (dgv.CurrentCell != null)
             {
-                var dongChon = dgv.Rows[index];
-                //Đi vào từng cột
-                string maphucap = dongChon.Cells[0].Value.ToString();
-                string tenphucap = dongChon.Cells[1].Value.ToString();
-                string sotien = dongChon.Cells[2].Value.ToString();
+                var index = dgv.CurrentCell.RowIndex;
 
-                tbMaPhuCap.Text = maphucap;
-                tbTenPhuCap.Text = tenphucap;
-                tbSoTien.Text = sotien;
+                if (index >= 0)
+                {
+                    var dongChon = dgv.Rows[index];
+                    //Đi vào từng cột
+                    string maphucap = dongChon.Cells[0].Value.ToString();
+                    string tenphucap = dongChon.Cells[1].Value.ToString();
+                    string sotien = dongChon.Cells[2].Value.ToString();
+
+                    tbMaPhuCap.Text = maphucap;
+                    tbTenPhuCap.Text = tenphucap;
+                    tbSoTien.Text = sotien;
+                }
             }
         }
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,18 +103,28 @@ namespace QLNhanSu
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            var del = dbContext.PhuCaps.Find(tbMaPhuCap.Text);
-            if (del != null)
+            try
             {
-                dbContext.PhuCaps.Remove(del);
-                dbContext.SaveChanges();
+                QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
+                var del = dbContext.PhuCaps.Find(tbMaPhuCap.Text);
+                if (del != null)
+                {
+                    dbContext.PhuCaps.Remove(del);
+                    dbContext.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy phụ cấp", "Thông báo", MessageBoxButtons.OK);
+                }
+                LoadDataGridView();
+                tbMaPhuCap.Clear();
+                tbTenPhuCap.Clear();
+                tbSoTien.Clear();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Không tìm thấy phụ cấp", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message.ToString(), "Lỗi: ");
             }
-            LoadDataGridView();
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

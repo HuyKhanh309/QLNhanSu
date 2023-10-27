@@ -35,7 +35,6 @@ namespace QLNhanSu
         {
             turn_on_off(true);
             QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            List<KyLuong> list = dbContext.KyLuongs.ToList();
             LoadDataGridView();
         }
         private List<KyLuong> GetData()
@@ -49,19 +48,21 @@ namespace QLNhanSu
         {
             dgv.DataSource = null;
             dgv.DataSource = GetData();
-
-            var index = dgv.CurrentCell.RowIndex;
-
-            if (index >= 0)
+            if (dgv.CurrentCell != null)
             {
-                var dongChon = dgv.Rows[index];
-                //Đi vào từng cột
-                string makl = dongChon.Cells[0].Value.ToString();
-                string thang = dongChon.Cells[1].Value.ToString();
-                string nam = dongChon.Cells[2].Value.ToString();
+                var index = dgv.CurrentCell.RowIndex;
 
-                tbMaKyLuong.Text = makl;
-                dtThoiGian.Text = DateTime.Parse(thang+"/"+nam).ToString("MM/yyyy");
+                if (index >= 0)
+                {
+                    var dongChon = dgv.Rows[index];
+                    //Đi vào từng cột
+                    string makl = dongChon.Cells[0].Value.ToString();
+                    string thang = dongChon.Cells[1].Value.ToString();
+                    string nam = dongChon.Cells[2].Value.ToString();
+
+                    tbMaKyLuong.Text = makl;
+                    dtThoiGian.Text = DateTime.Parse(thang + "/" + nam).ToString("MM/yyyy");
+                }
             }
         }
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -98,26 +99,33 @@ namespace QLNhanSu
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            var del = dbContext.KyLuongs.Find(tbMaKyLuong.Text);
-            if (del != null)
+            try
             {
-                dbContext.KyLuongs.Remove(del);
-                dbContext.SaveChanges();
+                QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
+                var del = dbContext.KyLuongs.Find(tbMaKyLuong.Text);
+                if (del != null)
+                {
+                    dbContext.KyLuongs.Remove(del);
+                    dbContext.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy kỳ lương", "Thông báo", MessageBoxButtons.OK);
+                }
+                LoadDataGridView();
+                tbMaKyLuong.Clear();
+                dtThoiGian.Clear();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Không tìm thấy kỳ lương", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message.ToString(), "Lỗi: ");
             }
-            LoadDataGridView();
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
         }
-
-
 
         private void btnLuu_Click(object sender, EventArgs e)
         {

@@ -38,7 +38,6 @@ namespace QLNhanSu
         {
             turn_on_off(true);
             QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            List<QuyetDinh> list = dbContext.QuyetDinhs.ToList();
             LoadDataGridView();
         }
         private List<QuyetDinhView> GetData()
@@ -61,18 +60,20 @@ namespace QLNhanSu
             dgv.DataSource = GetData();
 
             var index = dgv.CurrentCell.RowIndex;
-
-            if (index >= 0)
+            if (dgv.CurrentCell != null)
             {
-                var dongChon = dgv.Rows[index];
-                //Đi vào từng cột
-                string maqd = dongChon.Cells[0].Value.ToString();
-                string tenqd = dongChon.Cells[1].Value.ToString();
-                string thoigianqd = dongChon.Cells[2].Value.ToString();
+                if (index >= 0)
+                {
+                    var dongChon = dgv.Rows[index];
+                    //Đi vào từng cột
+                    string maqd = dongChon.Cells[0].Value.ToString();
+                    string tenqd = dongChon.Cells[1].Value.ToString();
+                    string thoigianqd = dongChon.Cells[2].Value.ToString();
 
-                tbIDQuyetDinh.Text = maqd;
-                tbTenQuyetDinh.Text = tenqd;
-                dtNgayQuyetDinh.Text = thoigianqd;
+                    tbIDQuyetDinh.Text = maqd;
+                    tbTenQuyetDinh.Text = tenqd;
+                    dtNgayQuyetDinh.Text = thoigianqd;
+                }
             }
         }
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -110,18 +111,29 @@ namespace QLNhanSu
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
-            var del = dbContext.QuyetDinhs.Find(tbIDQuyetDinh.Text);
-            if (del != null)
+            try
             {
-                dbContext.QuyetDinhs.Remove(del);
-                dbContext.SaveChanges();
+                QLNhanSuDBContext dbContext = new QLNhanSuDBContext();
+                var del = dbContext.QuyetDinhs.Find(tbIDQuyetDinh.Text);
+                if (del != null)
+                {
+                    dbContext.QuyetDinhs.Remove(del);
+                    dbContext.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy quyết định", "Thông báo", MessageBoxButtons.OK);
+                }
+                LoadDataGridView();
+                tbIDQuyetDinh.Clear();
+                tbTenQuyetDinh.Clear();
+                dtNgayQuyetDinh.Clear();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Không tìm thấy quyết định", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message.ToString(), "Lỗi: ");
             }
-            LoadDataGridView();
+
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

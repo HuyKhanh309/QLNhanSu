@@ -20,8 +20,7 @@ namespace QLNhanSu.Models
         public string MaNhanVien {  get; set; }
 
         [ForeignKey("MaNhanVien")]
-        public NhanVien NhanVien { get; set; }
-      
+        public virtual NhanVien NhanVien { get; set; }
 
         public virtual ICollection<CTBangLuong> CTBangLuongPhieuUngLuong { get; set; }
         public float MucUngLuong { get; set; }
