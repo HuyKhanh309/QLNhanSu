@@ -550,6 +550,7 @@ namespace QLNhanSu
             this.tbTenNhanVien.Name = "tbTenNhanVien";
             this.tbTenNhanVien.Size = new System.Drawing.Size(210, 22);
             this.tbTenNhanVien.TabIndex = 3;
+            this.tbTenNhanVien.TextChanged += new System.EventHandler(this.tbTenNhanVien_TextChanged);
             // 
             // lbIDPhieuUng
             // 

@@ -18,6 +18,22 @@ namespace QLNhanSu
         public frmUngLuong()
         {
             InitializeComponent();
+            
+            // Activate advanced mode.
+            tbTenNhanVien.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            tbTenNhanVien.Properties.AdvancedModeOptions.AutoCompleteMode = DevExpress.XtraEditors.TextEditAutoCompleteMode.SuggestAppend;
+            // Enable custom auto-complete suggestions.
+            tbTenNhanVien.Properties.AdvancedModeOptions.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            // Supply the custom auto-complete suggestions.
+            
+        }
+        private void tbTenNhanVien_TextChanged(object sender, EventArgs e)
+        {
+            QLNhanSuDBContext dBContext = new QLNhanSuDBContext();
+            AutoCompleteStringCollection list = new AutoCompleteStringCollection();
+            List<string> hoTen = dBContext.NhanViens.Select(s=> s.HoTen).ToList();
+            list.AddRange(hoTen.ToArray());
+            tbTenNhanVien.Properties.AdvancedModeOptions.AutoCompleteCustomSource = list;
         }
         private void turn_on_off(bool check)
         {
@@ -238,5 +254,7 @@ namespace QLNhanSu
         {
             search();
         }
+
+
     }
 }
