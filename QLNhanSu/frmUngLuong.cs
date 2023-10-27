@@ -238,6 +238,5 @@ namespace QLNhanSu
         {
             search();
         }
-       
     }
 }

@@ -81,6 +81,11 @@ namespace QLNhanSu
             this.lbTimIDPhieuuong = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.maPhieuUngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mucUngLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayUngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ungLuongViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.scTimIDPhieuUng = new DevExpress.XtraEditors.SearchControl();
             this.scTimTenNhanVien = new DevExpress.XtraEditors.SearchControl();
             this.bar14 = new DevExpress.XtraBars.Bar();
@@ -95,11 +100,6 @@ namespace QLNhanSu
             this.bar23 = new DevExpress.XtraBars.Bar();
             this.bar24 = new DevExpress.XtraBars.Bar();
             this.ungLuongViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ungLuongViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.maPhieuUngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mucUngLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayUngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gbThongTin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -116,10 +116,10 @@ namespace QLNhanSu
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scTimIDPhieuUng.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scTimTenNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // barDockControl5
@@ -627,6 +627,42 @@ namespace QLNhanSu
             this.dgv.TabIndex = 0;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 
+            // maPhieuUngDataGridViewTextBoxColumn
+            // 
+            this.maPhieuUngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.maPhieuUngDataGridViewTextBoxColumn.DataPropertyName = "MaPhieuUng";
+            this.maPhieuUngDataGridViewTextBoxColumn.HeaderText = "MaPhieuUng";
+            this.maPhieuUngDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maPhieuUngDataGridViewTextBoxColumn.Name = "maPhieuUngDataGridViewTextBoxColumn";
+            // 
+            // tenNhanVienDataGridViewTextBoxColumn
+            // 
+            this.tenNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "TenNhanVien";
+            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "TenNhanVien";
+            this.tenNhanVienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
+            // 
+            // mucUngLuongDataGridViewTextBoxColumn
+            // 
+            this.mucUngLuongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mucUngLuongDataGridViewTextBoxColumn.DataPropertyName = "MucUngLuong";
+            this.mucUngLuongDataGridViewTextBoxColumn.HeaderText = "MucUngLuong";
+            this.mucUngLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mucUngLuongDataGridViewTextBoxColumn.Name = "mucUngLuongDataGridViewTextBoxColumn";
+            // 
+            // ngayUngDataGridViewTextBoxColumn
+            // 
+            this.ngayUngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ngayUngDataGridViewTextBoxColumn.DataPropertyName = "NgayUng";
+            this.ngayUngDataGridViewTextBoxColumn.HeaderText = "NgayUng";
+            this.ngayUngDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayUngDataGridViewTextBoxColumn.Name = "ngayUngDataGridViewTextBoxColumn";
+            // 
+            // ungLuongViewBindingSource1
+            // 
+            this.ungLuongViewBindingSource1.DataSource = typeof(QLNhanSu.View.UngLuongView);
+            // 
             // scTimIDPhieuUng
             // 
             this.scTimIDPhieuUng.Location = new System.Drawing.Point(141, 43);
@@ -769,42 +805,6 @@ namespace QLNhanSu
             // 
             this.ungLuongViewBindingSource.DataSource = typeof(QLNhanSu.View.UngLuongView);
             // 
-            // ungLuongViewBindingSource1
-            // 
-            this.ungLuongViewBindingSource1.DataSource = typeof(QLNhanSu.View.UngLuongView);
-            // 
-            // maPhieuUngDataGridViewTextBoxColumn
-            // 
-            this.maPhieuUngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.maPhieuUngDataGridViewTextBoxColumn.DataPropertyName = "MaPhieuUng";
-            this.maPhieuUngDataGridViewTextBoxColumn.HeaderText = "MaPhieuUng";
-            this.maPhieuUngDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maPhieuUngDataGridViewTextBoxColumn.Name = "maPhieuUngDataGridViewTextBoxColumn";
-            // 
-            // tenNhanVienDataGridViewTextBoxColumn
-            // 
-            this.tenNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "TenNhanVien";
-            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "TenNhanVien";
-            this.tenNhanVienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
-            // 
-            // mucUngLuongDataGridViewTextBoxColumn
-            // 
-            this.mucUngLuongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mucUngLuongDataGridViewTextBoxColumn.DataPropertyName = "MucUngLuong";
-            this.mucUngLuongDataGridViewTextBoxColumn.HeaderText = "MucUngLuong";
-            this.mucUngLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mucUngLuongDataGridViewTextBoxColumn.Name = "mucUngLuongDataGridViewTextBoxColumn";
-            // 
-            // ngayUngDataGridViewTextBoxColumn
-            // 
-            this.ngayUngDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ngayUngDataGridViewTextBoxColumn.DataPropertyName = "NgayUng";
-            this.ngayUngDataGridViewTextBoxColumn.HeaderText = "NgayUng";
-            this.ngayUngDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngayUngDataGridViewTextBoxColumn.Name = "ngayUngDataGridViewTextBoxColumn";
-            // 
             // frmUngLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -840,10 +840,10 @@ namespace QLNhanSu
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scTimIDPhieuUng.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scTimTenNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ungLuongViewBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
